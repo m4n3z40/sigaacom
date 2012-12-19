@@ -70,11 +70,11 @@ return array(
 		'mysql' => array(
 			'driver'   => 'mysql',
 			'host'     => 'localhost',
-			'database' => 'database',
+			'database' => 'sigaacom',
 			'username' => 'root',
 			'password' => '',
 			'charset'  => 'utf8',
-			'prefix'   => '',
+			'prefix'   => 'aac_',
 		),
 
 		'pgsql' => array(
