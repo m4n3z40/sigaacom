@@ -8,8 +8,8 @@ class Create_Turmas_Table {
 			$table->increments('id');
 			$table->string('abreviacao', 20);
 			$table->string('nome');
-			$table->integer('cursos_id');
-			$table->integer('cat_cursos_id');
+			$table->integer('cursos_id')->unsigned();
+			$table->integer('cat_cursos_id')->unsigned();
 			$table->timestamps();
 		});
     }    

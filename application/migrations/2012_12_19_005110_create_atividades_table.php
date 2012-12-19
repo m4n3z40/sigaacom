@@ -8,8 +8,8 @@ class Create_Atividades_Table {
 			$table->increments('id');
 			$table->string('descricao', 255);
 			$table->float('tempo');
-			$table->integer('tipos_atv_id');
-			$table->integer('alunos_id');
+			$table->integer('tipos_atv_id')->unsigned();
+			$table->integer('alunos_id')->unsigned();
 			$table->timestamps();
 		});
 
