@@ -6,11 +6,11 @@ class Atividade extends Eloquent
 
 	public function tipo_atividade()
 	{
-		return $this->belongs_to('TipoAtividade');
+		return $this->belongs_to('TipoAtividade', 'tipo_atv_id');
 	}
 
 	public function aluno()
 	{
-		return $this->belongs_to('Aluno');
+		return $this->belongs_to('Aluno', 'aluno_id');
 	}
 }

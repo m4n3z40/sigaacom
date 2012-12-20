@@ -7,11 +7,11 @@ class CargaHoraria extends Eloquent
 
 	public function categoria_curso()
 	{
-		return $this->belongs_to('CategoriaCurso');
+		return $this->belongs_to('CategoriaCurso', 'cat_curso_id');
 	}
 
 	public function tipo_atividade()
 	{
-		return $this->belongs_to('TipoAtividade');
+		return $this->belongs_to('TipoAtividade', 'tipo_atv_id');
 	}
 }

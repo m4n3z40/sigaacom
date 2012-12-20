@@ -7,8 +7,8 @@ class Create_Cargas_Horarias_Table {
 		Schema::create('cargas_horarias', function($table) {
 			$table->increments('id');
 			$table->float('min');
-			$table->integer('cat_cursos_id')->unsigned();
-			$table->integer('tipos_atv_id')->unsigned();
+			$table->integer('cat_curso_id')->unsigned();
+			$table->integer('tipo_atv_id')->unsigned();
 			$table->timestamps();
 		});
     }    

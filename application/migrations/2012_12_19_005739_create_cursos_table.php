@@ -8,7 +8,7 @@ class Create_Cursos_Table {
 			$table->increments('id');
 			$table->string('abreviacao', 20);
 			$table->string('nome');
-			$table->integer('cat_cursos_id')->unsigned();
+			$table->integer('cat_curso_id')->unsigned();
 			$table->timestamps();
 		});
     }    
