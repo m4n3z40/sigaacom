@@ -14,13 +14,14 @@ class CategoriaCurso_Test extends PHPUnit_Framework_TestCase
 
 	public function testTudoCertoParaInicioDosTestes()
 	{
-		$this->assertNotEmpty(static::$categoriaCurso);
+		$this->assertInstanceOf('CategoriaCurso', static::$categoriaCurso);
 	}
 
 	public function testRecuperaCategoriasCursoumPorUmComSucesso()
 	{
 		$actual = CategoriaCurso::find( static::$categoriaCurso->id );
 
+		$this->assertInstanceOf('CategoriaCurso', $actual);
 		$this->assertEquals(static::$categoriaCurso->id, $actual->id);
 	}
 

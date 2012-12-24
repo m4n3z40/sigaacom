@@ -5,6 +5,8 @@ class Add_Constraints_To_All_Tables {
 	public function up()
     {
     	Schema::table('alunos', function($table) {
+    		$table->unique('matricula');
+
     		$table->foreign('cat_curso_id')
     			  ->references('id')
     			  ->on('cat_cursos');

@@ -38,11 +38,11 @@ class CargaHoraria_Test extends PHPUnit_Framework_TestCase
 
 	public function testTudoCertoParaComecarOsTestes()
 	{
-		$this->assertNotEmpty(static::$categoriaCurso);
-		$this->assertNotEmpty(static::$tipoAtividade);
+		$this->assertInstanceOf('CategoriaCurso', static::$categoriaCurso);
+		$this->assertInstanceOf('TipoAtividade', static::$tipoAtividade);
 
 		foreach (static::$cargasHorarias as $cargaHoraria) {
-			$this->assertNotEmpty($cargaHoraria);
+			$this->assertInstanceOf('CargaHoraria', $cargaHoraria);
 		}
 	}
 
@@ -51,6 +51,7 @@ class CargaHoraria_Test extends PHPUnit_Framework_TestCase
 		foreach (static::$cargasHorarias as $expected) {
 			$actual = CargaHoraria::find( $expected->id );
 
+			$this->assertInstanceOf('CargaHoraria', $actual);
 			$this->assertEquals( $expected->id, $actual->id );
 		}
 	}

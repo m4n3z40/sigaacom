@@ -55,12 +55,12 @@ class Aluno_Test extends PHPUnit_Framework_TestCase
 
 	public function testTudoEstaProntoParaOsTestes()
 	{		
-		$this->assertNotEmpty(static::$categoriaCurso);		
-		$this->assertNotEmpty(static::$curso);
-		$this->assertNotEmpty(static::$turma);
+		$this->assertInstanceOf('CategoriaCurso', static::$categoriaCurso);		
+		$this->assertInstanceOf('Curso', static::$curso);
+		$this->assertInstanceOf('Turma', static::$turma);
 
 		foreach (static::$alunos as $aluno) {
-			$this->assertNotEmpty($aluno);
+			$this->assertInstanceOf('Aluno', $aluno);
 		}
 	}
 
@@ -69,6 +69,7 @@ class Aluno_Test extends PHPUnit_Framework_TestCase
 		foreach (static::$alunos as $expectedAluno) {
 			$actualAluno = Aluno::find( $expectedAluno->id );
 
+			$this->assertInstanceOf('Aluno', $actualAluno);
 			$this->assertEquals( $expectedAluno->id, $actualAluno->id );
 		}
 	}

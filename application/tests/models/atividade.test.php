@@ -66,14 +66,14 @@ class Atividade_Test extends PHPUnit_Framework_TestCase
 
 	public function testTudoCertoParaInicioDosTestes()
 	{
-		$this->assertNotEmpty(static::$categoriaCurso);
-		$this->assertNotEmpty(static::$curso);
-		$this->assertNotEmpty(static::$turma);
-		$this->assertNotEmpty(static::$aluno);
-		$this->assertNotEmpty(static::$tipoAtividade);
+		$this->assertInstanceOf('CategoriaCurso', static::$categoriaCurso);
+		$this->assertInstanceOf('Curso', static::$curso);
+		$this->assertInstanceOf('Turma', static::$turma);
+		$this->assertInstanceOf('Aluno', static::$aluno);
+		$this->assertInstanceOf('TipoAtividade', static::$tipoAtividade);
 
 		foreach (static::$atividades as $atividade) {
-			$this->assertNotEmpty($atividade);
+			$this->assertInstanceOf('Atividade', $atividade);
 		}
 	}
 
@@ -82,6 +82,7 @@ class Atividade_Test extends PHPUnit_Framework_TestCase
 		foreach (static::$atividades as $expected) {
 			$actual = Atividade::find( $expected->id );
 
+			$this->assertInstanceOf('Atividade', $actual);
 			$this->assertEquals( $expected->id, $actual->id );
 		}
 	}

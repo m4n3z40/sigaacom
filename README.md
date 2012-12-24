@@ -1,4 +1,4 @@
-laravel-project-boilerplate
-===========================
+SIGAACOM - Sistema de Gerenciamento de Atividades Acadêmicas Complementares
+===========================================================================
 
-My Personal Laravel project boilerplate. Nothing to see here.
+My Personal project. Nothing to see here.
