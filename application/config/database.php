@@ -72,7 +72,7 @@ return array(
 			'host'     => 'localhost',
 			'database' => 'sigaacom',
 			'username' => 'root',
-			'password' => 'welearn',
+			'password' => '',
 			'charset'  => 'utf8',
 			'prefix'   => 'aac_',
 		),
