@@ -1,9 +1,8 @@
 <?php
 
-class TipoAtividade extends Eloquent 
+class TipoAtividade extends Basemodel 
 {
 	public static $table = 'tipos_atv';
-	public static $timestamps = true;
 
 	public function atividades()
 	{

@@ -1,9 +1,7 @@
 <?php
 
-class Atividade extends Eloquent 
+class Atividade extends Basemodel 
 {
-	public static $timestamps = true;
-
 	public function tipo_atividade()
 	{
 		return $this->belongs_to('TipoAtividade', 'tipo_atv_id');

@@ -1,9 +1,7 @@
 <?php
 
-class Turma extends Eloquent 
+class Turma extends Basemodel 
 {
-	public static $timestamps = true;
-
 	public function curso()
 	{
 		return $this->belongs_to('Curso', 'curso_id');

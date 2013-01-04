@@ -1,9 +1,8 @@
 <?php
 
-class CategoriaCurso extends Eloquent 
+class CategoriaCurso extends Basemodel 
 {
 	public static $table = 'cat_cursos';
-	public static $timestamps = true;
 
 	public function alunos()
 	{

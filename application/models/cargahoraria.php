@@ -1,9 +1,8 @@
 <?php
 
-class CargaHoraria extends Eloquent 
+class CargaHoraria extends Basemodel 
 {
 	public static $table = 'cargas_horarias';
-	public static $timestamps = true;
 
 	public function categoria_curso()
 	{

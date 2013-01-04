@@ -1,9 +1,7 @@
 <?php
 
-class Curso extends Eloquent 
+class Curso extends Basemodel 
 {
-	public static $timestamps = true;
-
 	public function categoria()
 	{
 		return $this->belongs_to('CategoriaCurso', 'cat_curso_id');

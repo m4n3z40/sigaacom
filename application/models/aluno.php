@@ -1,9 +1,7 @@
 <?php
 
-class Aluno extends Eloquent 
+class Aluno extends Basemodel 
 {
-	public static $timestamps = true;
-
 	public function turma()
 	{
 		return $this->belongs_to('Turma', 'turma_id');
