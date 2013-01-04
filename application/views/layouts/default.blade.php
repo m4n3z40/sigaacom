@@ -12,8 +12,21 @@
 	{{ HTML::style('css/main.css') }}
 </head>
 <body>
-	<div class="container">
-		<h1>Content goes here!</h1>
+
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				{{ HTML::link('/', 'SIGAACOM', ['class' => 'brand']) }}
+
+				<ul class="nav">
+					@yield('main-nav')
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="main-content container">
+		@yield('content')
 	</div>
 	
 	{{ HTML::script('js/jquery.js') }}

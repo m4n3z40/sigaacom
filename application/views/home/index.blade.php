@@ -1,24 +1,34 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Application Name</title>
-	<meta name="description" content="Application Description">
-	<meta name="viewport" content="width=device-width">
-		
-	{{ HTML::style('css/bootstrap.css') }}
-	{{ HTML::style('css/bootstrap-responsive.css') }}
-	{{ HTML::style('css/main.css') }}
-</head>
-<body>
-	<div class="container">
-		<h1>Content goes here!</h1>
+@layout('layouts.default')
+
+@section('main-nav')
+	<li class="active">{{ HTML::link('/', 'Home') }}</li>
+@endsection
+
+@section('content')
+	<div id="LoginFormWrapper" class="form-wrapper span6">
+		<div class="form-info">
+			<h2>Login de Gerenciamento</h2>
+		</div>
+		{{ Form::open('login', 'POST', ['class' => 'form-horizontal']) }}
+
+			<div class="control-group">
+				{{ Form::label('login', 'Login', ['class' => 'control-label']) }}
+				<div class="controls">
+					{{ Form::input('text', 'login') }}
+				</div>
+			</div>
+
+			<div class="control-group">
+				{{ Form::label('senha', 'Senha', ['class' => 'control-label']) }}
+				<div class="controls">
+					{{ Form::password('senha') }}
+				</div>
+			</div>
+
+			<div class="form-actions">
+				{{ Form::button('Entrar', ['class' => 'btn btn-primary']) }}	
+			</div>
+
+		{{ Form::close() }}
 	</div>
-	
-	{{ HTML::script('js/jquery.js') }}
-	{{ HTML::script('js/bootstrap.js') }}
-	{{ HTML::script('js/plugins.js') }}
-	{{ HTML::script('js/main.js') }}
-</body>
-</html>
+@endsection
