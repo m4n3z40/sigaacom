@@ -54,6 +54,10 @@ class Add_Constraints_To_All_Tables {
 				  ->on_update('cascade');
 		});
 
+		Schema::table('gerenciadores', function($table) {
+			$table->unique('login');
+		});
+
 		Schema::table('turmas', function($table) {
 			$table->foreign('curso_id')
 				  ->references('id')

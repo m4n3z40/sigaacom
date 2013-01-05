@@ -1,13 +1,10 @@
 <?php
 
-Route::get('/, login', function()
-{
-	return View::make('home.index');
-});
+Route::get('/, login', array('as' => 'login', 'uses' => 'gerenciadores@login'));
+Route::get('home', array('as' => 'home', 'uses' => 'gerenciadores@home'));
+Route::get('logout', array('as' => 'logout', 'uses' => 'gerenciadores@logout'));
 
-Route::post('login', function(){
-	return 'Login!';
-});
+Route::post('login', array('as' => 'login', 'before' => 'csrf', 'uses' => 'gerenciadores@login'));
 
 
 /*
@@ -80,5 +77,5 @@ Route::filter('csrf', function()
 
 Route::filter('auth', function()
 {
-	if (Auth::guest()) return Redirect::to('login');
+	if (Auth::guest()) return Redirect::to_route('login');
 });
