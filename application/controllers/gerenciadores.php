@@ -35,7 +35,7 @@ class Gerenciadores_Controller extends Base_Controller {
     					 ->with_input()
     					 ->with(
     					 	'flash_message', 
-    					 	'<div class="error"><p>A combinação de login e senha informados está incorreta.</p><p>Por favor verifique e tente novamente.</p></div'
+    					 	'<div class="error"><p>A combinação de login e senha informados está incorreta.</p><p>Por favor verifique e tente novamente.</p></div>'
     					 );
     }
 
